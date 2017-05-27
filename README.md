@@ -22,7 +22,7 @@ This application can be built with Maven
 
 2. Run with command below from folder analytics-app after building
 
-```java -jar target/analytics-app-1.0-SNAPSHOT.jar "A blue shirt cost is twenty-four dollars but a white shirt is only twenty so I bought the white shirt" "new a new "
+java -jar target/analytics-app-1.0-SNAPSHOT.jar "A blue shirt cost is twenty-four dollars but a white shirt is only twenty so I bought the white shirt" "new a new "
 
 ### Unit Test ###
 
