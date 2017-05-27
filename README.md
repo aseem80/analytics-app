@@ -14,7 +14,7 @@ This application can be built with Maven
 #### Pre-requisties Software for Build ####
 
  1. Maven
- 2. DK 1.8
+ 2. JDK 1.8
 
  #### Running the Program ####
 
