@@ -18,11 +18,11 @@ This application can be built with Maven
 
  #### Running the Program ####
 
-1. Build it using command mvn clean install  This will create target folder
+1. Build it using command "mvn clean install"  This will create target folder
 
 2. Run with command below from folder analytics-app after building
 
-```java -jar target/analytics-app-1.0-SNAPSHOT.jar "A blue shirt cost is twenty-four dollars but a white shirt is only twenty so I bought the white shirt" "new a new "
+java -jar target/analytics-app-1.0-SNAPSHOT.jar "A blue shirt cost is twenty-four dollars but a white shirt is only twenty so I bought the white shirt" "new a new "
 
 ### Unit Test ###
 
