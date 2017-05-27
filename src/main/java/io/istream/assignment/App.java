@@ -9,19 +9,23 @@ import java.util.Set;
 public class App {
 
     private static final Character TEXT_DELIMITER = ' ';
-    private static final Set<Character> SENTENCE_SEPARATORS = new HashSet<>();
+    private static final Set<Character> PUNCTUATION_CHARS = new HashSet<>();
 
     static {
-        SENTENCE_SEPARATORS.add(',');
-        SENTENCE_SEPARATORS.add('.');
-        SENTENCE_SEPARATORS.add('"');
+        PUNCTUATION_CHARS.add(',');
+        PUNCTUATION_CHARS.add('.');
+        PUNCTUATION_CHARS.add('"');
+        PUNCTUATION_CHARS.add('?');
+        PUNCTUATION_CHARS.add(';');
+        PUNCTUATION_CHARS.add(TEXT_DELIMITER);
+
     }
 
     public static void main(String[] args) {
         if (args.length > 0) {
             for (int index = 0; index < args.length; index++) {
                 System.out.println("For String at Index : " + index +
-                        " Most frequent word : " + getMostFrequentWordUsingMap(args[index]));
+                        " Most frequent word : " + getMostFrequentWord(args[index]));
             }
         } else {
             throw new RuntimeException("No args provided.");
@@ -35,7 +39,7 @@ public class App {
      * Time:- O(n+n)=O(n)
      * Space :- O(n)
      */
-    public static String getMostFrequentWordUsingMap(String text) {
+    public static String getMostFrequentWord(String text) {
 
         if (null != text) {
             String mostFrequentWord = "";
@@ -66,19 +70,23 @@ public class App {
     private static Map<String, Integer> getMap(String text) {
         final Map<String, Integer> wordFrequencyMap = new HashMap<>();
         StringBuilder sb = new StringBuilder();
-        for (char ch : text.toCharArray()) {
-            if (TEXT_DELIMITER != ch) {
-                if (!SENTENCE_SEPARATORS.contains(ch)) {
+        for (int index = 0; index < text.length(); index++) {
+            char ch = text.charAt(index);
+            if (TEXT_DELIMITER != ch ) {
+                if(!PUNCTUATION_CHARS.contains(ch)) {
                     sb.append(ch);
                 }
             } else {
-                String word = sb.toString().trim();
-                setMap(wordFrequencyMap, word);
+                String word = sb.toString();
+                //It should handle white_spaces
+                if(!word.isEmpty()) {
+                    setMap(wordFrequencyMap, word);
+                }
                 sb = new StringBuilder();
             }
         }
         //Add the Last word
-        String word = sb.toString().trim();
+        String word = sb.toString();
         if (!word.isEmpty()) {
             setMap(wordFrequencyMap, word);
         }

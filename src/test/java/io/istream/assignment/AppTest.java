@@ -17,41 +17,50 @@ public class AppTest
 
 {
     @Test
-    public void getMostFrequentWordUsingMapPositiveInput() {
-        String text = "A blue shirt cost is twenty-four dollars but a white shirt is only twenty so I bought the white shirt.";
-        assertEquals("shirt", App.getMostFrequentWordUsingMap(text));
+    public void getMostFrequentWordPositiveInput() {
+        String text = "A blue shirt cost is twenty-four dollars but a white shirt is only twenty so I" +
+                " bought the white shirt.";
+        assertEquals("shirt", App.getMostFrequentWord(text));
     }
 
     @Test
-    public void getMostFrequentWordUsingMapNullInput() {
+    public void getMostFrequentWordWhiteSpacesInput() {
+        String text = "A blue shirt     cost is twenty-four " +
+                "dollars but a white     shirt     is only twenty so I bought the white shirt   .   ";
+        assertEquals("shirt", App.getMostFrequentWord(text));
+    }
+
+    @Test
+    public void getMostFrequentWordNullInput() {
         String text = null;
-        assertNull(App.getMostFrequentWordUsingMap(text));
+        assertNull(App.getMostFrequentWord(text));
     }
 
     @Test
-    public void getMostFrequentWordUsingMapEmptyInput() {
+    public void getMostFrequentWordEmptyInput() {
         String text = "";
-        assertEquals("", App.getMostFrequentWordUsingMap(text));
+        assertEquals("", App.getMostFrequentWord(text));
     }
 
     @Test
-    public void getMostFrequentWordUsingMapSingleCharInput() {
+    public void getMostFrequentWordSingleCharInput() {
         String text = "c";
-        assertEquals(text, App.getMostFrequentWordUsingMap(text));
+        assertEquals(text, App.getMostFrequentWord(text));
     }
 
 
     @Test
-    public void getMostFrequentWordUsingMap2Input() {
+    public void getMostFrequentWord2Input() {
         String text = "A blue shirt cost is twenty-four dollars but a white shirt is only twenty so I bought the white ";
         List<String> expectedWords = Arrays.asList("is","shirt");
-        assertTrue(expectedWords.contains(App.getMostFrequentWordUsingMap(text)));
+        assertTrue(expectedWords.contains(App.getMostFrequentWord(text)));
     }
 
     @Test
-    public void getMostFrequentWordUsingMapPositiveInputPunctuations() {
-        String text = "A blue \"shirt\" cost is twenty-four dollars but a white \"shirt\" is only twenty so I bought the white shirt.";
-        assertEquals("shirt", App.getMostFrequentWordUsingMap(text));
+    public void getMostFrequentWordPunctuations() {
+        String text = "A blue \"shirt\" cost is twenty-four dollars but a white \"shirt\" is only twenty so I bought " +
+                "the white shirt.";
+        assertEquals("shirt", App.getMostFrequentWord(text));
     }
 
 }
