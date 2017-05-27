@@ -14,6 +14,7 @@ This application can be built with Maven
 1. Build it using command mvn clean install (Maven should be installed to run the program)
 
 2. Run with command below from folder analytics-app
+
 java -jar target/analytics-app-1.0-SNAPSHOT.jar "A blue shirt cost is twenty-four dollars but a white shirt is only twenty so I bought the white shirt" "new a new "
 
 ### Unit Test ###
