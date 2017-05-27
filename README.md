@@ -23,6 +23,6 @@ Space Complexity :- O(n) where n is number of words in input text
 
 ### Assumption ###
 
-Only trim method is use in standard String class from Java and HashMap Data Structure is used. Not sure if assignment
+Only trim method is use from standard String class of Java and HashMap Data Structure is used. Not sure if assignment
 required to have my own implementation of HashMap. In case it is required I can attempt to have my own implementation of Map interface
 methods that have been used here.
