@@ -11,7 +11,14 @@ This application can be built with Maven
 
 ### How to run the program ###
 
-1. Build it using command ```mvn clean install``` (Maven should be installed to run the program). This will create target folder
+#### Pre-requisties Software for Build ####
+
+ 1. Maven
+ 2. DK 1.8
+
+ #### Running the Program ####
+
+1. Build it using command ```mvn clean install  This will create target folder
 
 2. Run with command below from folder analytics-app after building
 
