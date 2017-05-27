@@ -39,6 +39,5 @@ Space Complexity :- O(n) where n is number of words in input text
 
 ### Assumption ###
 
-HashMap Data Structure is used to solve the business problem. Not sure if assignment
-required to have my own implementation of HashMap. In case it is required I can attempt to have my own implementation of Map interface
-methods that have been used here.
+1. Words in quotation are same as words without quotation. i.e ignore "".
+2. Words are case sensitive Words are case
