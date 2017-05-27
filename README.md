@@ -11,9 +11,9 @@ This application can be built with Maven
 
 ### How to run the program ###
 
-1. Build it using command mvn clean install (Maven should be installed to run the program)
+1. Build it using command ```mvn clean install``` (Maven should be installed to run the program). This will create target folder
 
-2. Run with command below from folder analytics-app
+2. Run with command below from folder analytics-app after building
 
 ```java -jar target/analytics-app-1.0-SNAPSHOT.jar "A blue shirt cost is twenty-four dollars but a white shirt is only twenty so I bought the white shirt" "new a new "
 
